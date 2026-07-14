@@ -88,7 +88,7 @@ h2.section-title { font-size: 32px; color: var(--white); margin-bottom: 12px; }
 /* Session cards */
 .sessions { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 @media (max-width: 820px) { .sessions { grid-template-columns: 1fr; } }
-.session { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 28px; }
+.session { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 28px; display: flex; flex-direction: column; }
 .session .tag { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; }
 .session.s1 .tag { background: rgba(88,166,255,.15); color: var(--blue); }
 .session.s2 .tag { background: rgba(188,140,255,.15); color: var(--purple); }
@@ -98,7 +98,8 @@ h2.section-title { font-size: 32px; color: var(--white); margin-bottom: 12px; }
 .session li { font-size: 14px; padding-left: 26px; position: relative; }
 .session li::before { content: '▸'; position: absolute; left: 4px; color: var(--green); }
 .session li strong { color: var(--white); }
-.present-btn { margin-top: 22px; display: inline-block; }
+.present-btn { margin-top: auto; align-self: flex-start; display: inline-block; padding-top: 12px; }
+.session ul { margin-bottom: 24px; }
 
 /* A2D map */
 .a2d { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
