@@ -98,6 +98,7 @@ h2.section-title { font-size: 32px; color: var(--white); margin-bottom: 12px; }
 .session li { font-size: 14px; padding-left: 26px; position: relative; }
 .session li::before { content: '▸'; position: absolute; left: 4px; color: var(--green); }
 .session li strong { color: var(--white); }
+.present-btn { margin-top: 22px; display: inline-block; }
 
 /* A2D map */
 .a2d { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
