@@ -94,12 +94,11 @@ h2.section-title { font-size: 32px; color: var(--white); margin-bottom: 12px; }
 .session.s2 .tag { background: rgba(188,140,255,.15); color: var(--purple); }
 .session h3 { color: var(--white); font-size: 22px; margin-bottom: 6px; }
 .session .focus { font-size: 14px; color: var(--text-muted); margin-bottom: 18px; font-style: italic; }
-.session ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.session ul { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
 .session li { font-size: 14px; padding-left: 26px; position: relative; }
 .session li::before { content: '▸'; position: absolute; left: 4px; color: var(--green); }
 .session li strong { color: var(--white); }
-.present-btn { margin-top: auto; align-self: flex-start; display: inline-block; padding-top: 12px; }
-.session ul { margin-bottom: 24px; }
+.present-btn { margin-top: auto; align-self: flex-start; display: inline-block; }
 
 /* A2D map */
 .a2d { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
