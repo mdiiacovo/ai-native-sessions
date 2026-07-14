@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Best-in-Class Copilot Prompting — Cheat Sheet</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body { padding: 0; }
+    .sheet { max-width: 980px; margin: 0 auto; padding: 40px 28px 80px; }
+    .sheet-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; border-bottom: 2px solid var(--border); padding-bottom: 16px; margin-bottom: 28px; flex-wrap: wrap; }
+    .sheet-head h1 { font-size: 30px; color: var(--white); }
+    .sheet-head .sub { color: var(--text-muted); font-size: 14px; }
+    .print-btn { padding: 8px 16px; border-radius: 8px; background: var(--green); color: #04260f; border: none; font-weight: 600; font-size: 13px; cursor: pointer; }
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    @media (max-width: 780px) { .cols { grid-template-columns: 1fr; } }
+    .box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; margin-bottom: 22px; break-inside: avoid; }
+    .box h2 { font-size: 16px; color: var(--white); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .box h2 .n { width: 24px; height: 24px; border-radius: 50%; background: var(--bg-elev); border: 1px solid var(--border); display: inline-flex; align-items: center; justify-content: center; font-size: 13px; color: var(--green); flex: 0 0 24px; }
+    .box p { font-size: 13.5px; color: var(--text); margin-bottom: 8px; }
+    .box p.why { color: var(--text-muted); font-size: 12.5px; }
+    .ex { background: var(--bg); border: 1px solid var(--border); border-left: 3px solid var(--green); border-radius: 6px; padding: 8px 12px; font-size: 12.5px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; color: var(--text); margin-top: 6px; }
+    .ex.bad { border-left-color: var(--red); }
+    .ex .lbl { display: block; font-family: -apple-system, sans-serif; font-size: 10.5px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 4px; }
+    ul.tight { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    ul.tight li { font-size: 13px; padding-left: 20px; position: relative; }
+    ul.tight li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+    ul.tight.bad li::before { content: '✕'; color: var(--red); }
+    .loop { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 13px; }
+    .loop .chip { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 20px; padding: 5px 12px; color: var(--white); }
+    .loop .arr { color: var(--text-muted); }
+    .backlink { display: inline-block; margin-bottom: 18px; font-size: 13px; }
+    @media print {
+      :root { --bg: #fff; --bg-card: #fff; --bg-elev: #f6f8fa; --border: #d0d7de; --text: #1f2328; --text-muted: #57606a; --white: #000; }
+      body { background: #fff; }
+      .print-btn, .backlink { display: none; }
+      .box { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <a class="backlink" href="index.html">← Back to sessions</a>
+    <div class="sheet-head">
+      <div>
+        <h1>Best-in-Class Copilot Prompting</h1>
+        <div class="sub">A one-page field guide for the hackathon · print or keep it open</div>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+    </div>
+
+    <div class="cols">
+      <div>
+        <div class="box">
+          <h2><span class="n">1</span> Specify the outcome, not the steps</h2>
+          <p>Say what "done" looks like. Let Copilot choose the how.</p>
+          <div class="ex"><span class="lbl">Good</span>"Add a search box that filters the queue by title or team, matching the existing dark theme."</div>
+          <div class="ex bad"><span class="lbl">Avoid</span>"Create a function, then add an input, then loop over the array…"</div>
+        </div>
+
+        <div class="box">
+          <h2><span class="n">2</span> Give constraints</h2>
+          <p>Stack, style, and what <em>not</em> to touch. Guardrails raise quality.</p>
+          <div class="ex"><span class="lbl">Good</span>"Keep it zero-dependency (vanilla JS). Don't change the data model or add packages."</div>
+        </div>
+
+        <div class="box">
+          <h2><span class="n">3</span> Iterate in small loops</h2>
+          <p>One change at a time, run it, then refine. Beats one giant mega-prompt.</p>
+          <div class="ex"><span class="lbl">Good</span>"Now add a risk-level dropdown too, and update the count badge to reflect filters."</div>
+        </div>
+
+        <div class="box">
+          <h2><span class="n">4</span> Ask it to plan first</h2>
+          <p>Get the approach before the code. Catch wrong turns early — cheaply.</p>
+          <div class="ex"><span class="lbl">Good</span>"Before coding, outline your plan to add filtering without new dependencies."</div>
+        </div>
+      </div>
+
+      <div>
+        <div class="box">
+          <h2><span class="n">★</span> Ground the model</h2>
+          <p>Great context → great output. Beginners skip this; pros never do.</p>
+          <ul class="tight">
+            <li>Open (or reference) the files that matter</li>
+            <li>Point at the symbol, function, or example to mirror</li>
+            <li>Use <strong>copilot-instructions.md</strong> to pin project conventions</li>
+            <li>Paste the error, the log, or the spec — don't make it guess</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h2><span class="n">⚑</span> Anti-patterns to kill</h2>
+          <ul class="tight bad">
+            <li>Vague one-liners ("make it better")</li>
+            <li>One massive prompt doing ten things</li>
+            <li>Blindly accepting output without reading it</li>
+            <li>No constraints, then surprised by the stack it picked</li>
+            <li>Re-prompting from scratch instead of correcting</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h2><span class="n">⟳</span> The core loop</h2>
+          <div class="loop">
+            <span class="chip">Context</span><span class="arr">→</span>
+            <span class="chip">Prompt</span><span class="arr">→</span>
+            <span class="chip">Build</span><span class="arr">→</span>
+            <span class="chip">Delegate</span><span class="arr">→</span>
+            <span class="chip">PR</span>
+          </div>
+          <p class="why" style="margin-top:12px">Small enough to code yourself → do it. Big enough to hand off → assign the issue to the <strong>Copilot coding agent</strong> and get a pull request back.</p>
+        </div>
+
+        <div class="box">
+          <h2><span class="n">🏁</span> Hackathon quick wins</h2>
+          <ul class="tight">
+            <li>Start from a written issue — clarity compounds</li>
+            <li>Delegate boilerplate; spend your time on the hard 20%</li>
+            <li>Let CodeQL + Copilot review catch bugs before judges do</li>
+            <li>Make it demo-proof: README, a clear story, measurable impact</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
