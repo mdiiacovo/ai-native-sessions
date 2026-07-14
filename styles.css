@@ -118,8 +118,7 @@ h2.section-title { font-size: 32px; color: var(--white); margin-bottom: 12px; }
 .callout { margin-top: 24px; background: rgba(63,185,80,.08); border: 1px solid rgba(63,185,80,.3); border-radius: 10px; padding: 16px 20px; font-size: 14px; }
 
 /* Resources */
-.resources { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
-@media (max-width: 820px) { .resources { grid-template-columns: 1fr; } }
+.resources { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
 .res { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 22px; display: block; }
 .res:hover { background: var(--bg-elev); text-decoration: none; border-color: var(--blue); }
 .res h3 { color: var(--white); font-size: 16px; margin-bottom: 6px; }

@@ -10,6 +10,7 @@ a friendlier alternative to a slide deck. Static HTML/CSS, runs entirely in the 
 | --- | --- |
 | `index.html` | The "deck" as a scrollable page — why, the two sessions, A2D mapping, the live-build flow, resources |
 | `cheatsheet.html` | Printable one-pager: best-in-class Copilot prompting patterns |
+| `checklist.html` | Printable, tickable pre-hackathon readiness checklist (browser-first) |
 
 ## Sessions covered
 - **Session 1 · Aug 5** — *Building with GitHub Copilot: The AI-Native Developer* (Acquire → Build)

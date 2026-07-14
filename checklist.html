@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Before the Hackathon — Readiness Checklist</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body { padding: 0; }
+    .sheet { max-width: 900px; margin: 0 auto; padding: 40px 28px 80px; }
+    .sheet-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; border-bottom: 2px solid var(--border); padding-bottom: 16px; margin-bottom: 28px; flex-wrap: wrap; }
+    .sheet-head h1 { font-size: 30px; color: var(--white); }
+    .sheet-head .sub { color: var(--text-muted); font-size: 14px; }
+    .print-btn { padding: 8px 16px; border-radius: 8px; background: var(--green); color: #04260f; border: none; font-weight: 600; font-size: 13px; cursor: pointer; }
+    .backlink { display: inline-block; margin-bottom: 18px; font-size: 13px; }
+    .group { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 22px 24px; margin-bottom: 20px; break-inside: avoid; }
+    .group h2 { font-size: 16px; color: var(--white); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .check { display: flex; gap: 12px; align-items: flex-start; padding: 9px 0; border-bottom: 1px dashed var(--border); }
+    .check:last-child { border-bottom: none; }
+    .check .cb { flex: 0 0 20px; width: 20px; height: 20px; border: 2px solid var(--border); border-radius: 5px; margin-top: 1px; cursor: pointer; background: var(--bg); transition: all .15s; }
+    .check .cb.on { background: var(--green); border-color: var(--green); position: relative; }
+    .check .cb.on::after { content: '✓'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #04260f; font-size: 13px; font-weight: 800; }
+    .check .txt { font-size: 14px; }
+    .check .txt strong { color: var(--white); }
+    .check .txt .hint { display: block; font-size: 12.5px; color: var(--text-muted); margin-top: 2px; }
+    .note { font-size: 13px; color: var(--text-muted); background: rgba(88,166,255,.07); border: 1px solid rgba(88,166,255,.25); border-radius: 10px; padding: 14px 18px; margin-bottom: 24px; }
+    @media print {
+      :root { --bg: #fff; --bg-card: #fff; --bg-elev: #f6f8fa; --border: #d0d7de; --text: #1f2328; --text-muted: #57606a; --white: #000; }
+      body { background: #fff; }
+      .print-btn, .backlink { display: none; }
+      .group { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <a class="backlink" href="index.html">← Back to sessions</a>
+    <div class="sheet-head">
+      <div>
+        <h1>Before the Hackathon</h1>
+        <div class="sub">A 2-minute readiness check so you can build from minute one · tap items to tick them</div>
+      </div>
+      <button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+    </div>
+
+    <div class="note">
+      💡 This event is <strong>browser-first</strong> — you can do the whole build on
+      github.com with the Copilot coding agent, no local setup required. The IDE items are
+      optional for those who prefer to code locally.
+    </div>
+
+    <div class="group">
+      <h2>🔑 Access &amp; entitlement</h2>
+      <div class="check"><span class="cb" role="checkbox"></span><span class="txt"><strong>Copilot seat assigned</strong><span class="hint">Confirm you have an active GitHub Copilot license.</span></span></div>
+      <div class="check"><span class="cb" role="checkbox"></span><span class="txt"><strong>Copilot enabled for your account</strong><span class="hint">Check github.com → Settings → Copilot shows it as active.</span></span></div>
+      <div class="check"><span class="cb" role="checkbox"></span><span class="txt"><strong>Coding agent enabled by org policy</strong><span class="hint">Your org must allow the Copilot coding agent so you can assign issues to it.</span></span></div>
+      <div class="check"><span class="cb" role="checkbox"></span><span class="txt"><strong>Repo access</strong><span class="hint">You can create a repo (or have write access to your team's) to open issues and PRs.</span></span></div>
+    </div>
+
+    <div class="group">
+      <h2>🌐 Browser-first path (recommended)</h2>
+      <div class="check"><span class="cb" role="checkbox"></span><span class="txt"><strong>You can open an issue and assign Copilot</strong><span class="hint">Issue → Assignees → Copilot. If Copilot isn't listed, revisit the org policy item above.</span></span></div>
+      <div class="check"><span class="cb" role="checkbox"></span><span class="txt"><strong>Copilot Chat works on github.com</strong><span class="hint">Try asking it to explain a file in any repo.</span></span></div>
+      <div class="check"><span class="cb" role="checkbox"></span><span class="txt"><strong>(Optional) GitHub Pages ready</strong><span class="hint">If you want a live URL, enable Pages so merges auto-deploy.</span></span></div>
+    </div>
+
+    <div class="group">
+      <h2>💻 Local / IDE path (optional)</h2>
+      <div class="check"><span class="cb" role="checkbox"></span><span class="txt"><strong>IDE extension installed</strong><span class="hint">GitHub Copilot + Copilot Chat in VS Code (or your editor).</span></span></div>
+      <div class="check"><span class="cb" role="checkbox"></span><span class="txt"><strong>Signed in &amp; agent mode available</strong><span class="hint">Confirm agent/edits mode appears in the Copilot panel.</span></span></div>
+      <div class="check"><span class="cb" role="checkbox"></span><span class="txt"><strong>Git configured</strong><span class="hint">You can clone, commit, and push.</span></span></div>
+    </div>
+
+    <div class="group">
+      <h2>🧠 Come with a starting point</h2>
+      <div class="check"><span class="cb" role="checkbox"></span><span class="txt"><strong>A real pain point in mind</strong><span class="hint">Start from a problem, not a technology.</span></span></div>
+      <div class="check"><span class="cb" role="checkbox"></span><span class="txt"><strong>A rough first issue drafted</strong><span class="hint">Even one sentence. Copilot can help you refine it into acceptance criteria.</span></span></div>
+      <div class="check"><span class="cb" role="checkbox"></span><span class="txt"><strong>The cheat sheet handy</strong><span class="hint"><a href="cheatsheet.html">Prompting cheat sheet →</a></span></span></div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.cb').forEach(function (cb) {
+      cb.addEventListener('click', function () { cb.classList.toggle('on'); });
+    });
+  </script>
+</body>
+</html>
