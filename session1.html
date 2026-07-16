@@ -3,45 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Session 1 Â· Aug 5 â Building with GitHub Copilot</title>
+  <title>Session 1 · Aug 5 — Building with GitHub Copilot</title>
   <link rel="stylesheet" href="deck.css" />
 </head>
 <body>
   <div class="progress"></div>
   <div class="deck">
 
-    <!-- 1 Â· Title -->
+    <!-- 1 · Title -->
     <section class="slide">
-      <span class="tag s1">Session 1 Â· Aug 5 Â· Acquire â Build</span>
+      <span class="tag s1">Session 1 · Aug 5 · Acquire → Build</span>
       <h1>Building with GitHub Copilot: <span class="grad">The AI-Native Developer</span></h1>
-      <p class="lead">The core development loop â and how strong builders drive it, from a pain point to a shipped prototype.</p>
+      <p class="lead">The core development loop — and how strong builders drive it, from a pain point to a shipped prototype.</p>
     </section>
 
-    <!-- 2 Â· Agenda -->
+    <!-- 2 · Agenda -->
     <section class="slide">
       <span class="kicker">Today</span>
       <h2>From idea to a working prototype</h2>
       <ul class="points">
-        <li>The Copilot surface â what each part is <strong>for</strong></li>
+        <li>The Copilot surface — what each part is <strong>for</strong></li>
         <li>Planning, grounding, and picking the right model</li>
         <li>Prompting patterns that reliably raise quality</li>
-        <li><strong>Live build</strong> â issue â agent â PR â shipped, in the browser</li>
+        <li><strong>Live build</strong> — issue → agent → PR → shipped, in the browser</li>
       </ul>
     </section>
 
-    <!-- 3 Â· Copilot surface -->
+    <!-- 3 · Copilot surface -->
     <section class="slide">
       <span class="kicker">Know your tools</span>
       <h2>The Copilot surface, by job</h2>
       <ul class="points">
-        <li><strong>Completions</strong> â flow state, boilerplate, "finish my thought"</li>
-        <li><strong>Chat</strong> â ask, explain, plan, refactor in place</li>
-        <li><strong>Edits / agent mode</strong> â multi-file changes from one instruction</li>
-        <li><strong>Coding agent</strong> â hand off a whole issue, get a pull request back</li>
+        <li><strong>Completions</strong> — flow state, boilerplate, "finish my thought"</li>
+        <li><strong>Chat</strong> — ask, explain, plan, refactor in place</li>
+        <li><strong>Edits / agent mode</strong> — multi-file changes from one instruction</li>
+        <li><strong>Coding agent</strong> — hand off a whole issue, get a pull request back</li>
       </ul>
     </section>
 
-    <!-- 4 Â· Copilot for planning -->
+    <!-- 4 · Copilot for planning -->
     <section class="slide">
       <span class="kicker">Not just for engineers</span>
       <h2>Copilot for planning</h2>
@@ -49,88 +49,88 @@
       <ul class="points">
         <li>Break an epic into <strong>issues</strong> with auto-drafted <strong>acceptance criteria</strong></li>
         <li>A concrete takeaway for <strong>PMs &amp; designers</strong>, not only developers</li>
-        <li>Clear issues are half the build â and exactly what the coding agent needs</li>
+        <li>Clear issues are half the build — and exactly what the coding agent needs</li>
       </ul>
     </section>
 
-    <!-- 5 Â· Comprehend inherited systems -->
+    <!-- 5 · Comprehend inherited systems -->
     <section class="slide">
       <span class="kicker">The Acquire edge</span>
       <h2>Comprehend inherited systems</h2>
       <ul class="points">
-        <li>Point Copilot at unfamiliar or <strong>acquired</strong> code â get a plain-English explanation</li>
+        <li>Point Copilot at unfamiliar or <strong>acquired</strong> code → get a plain-English explanation</li>
         <li>Ask it to <strong>document</strong> the module so the team can own it</li>
         <li>Turns "who wrote this?" into "here's what it does" in minutes</li>
         <li><span class="note">Demo: the undocumented <code>legacy/triage-rules.js</code> in the intake app</span></li>
       </ul>
     </section>
 
-    <!-- 6 Â· Grounding with AGENTS.md -->
+    <!-- 6 · Grounding with AGENTS.md -->
     <section class="slide">
       <span class="kicker">The pro move</span>
       <h2>Grounding with AGENTS.md</h2>
-      <p class="sub">Great context in â great output out.</p>
+      <p class="sub">Great context in → great output out.</p>
       <ul class="points">
-        <li>Commit an <strong>AGENTS.md</strong> with 3â4 project rules (stack, conventions, don'ts)</li>
-        <li>Run the <strong>same prompt</strong> with it present vs. absent â watch quality jump</li>
+        <li>Commit an <strong>AGENTS.md</strong> with 3–4 project rules (stack, conventions, don'ts)</li>
+        <li>Run the <strong>same prompt</strong> with it present vs. absent — watch quality jump</li>
         <li>The thing beginners skip and strong builders never do</li>
       </ul>
     </section>
 
-    <!-- 7 Â· Which model, when -->
+    <!-- 7 · Which model, when -->
     <section class="slide">
       <span class="kicker">Right tool, right job</span>
       <h2>Which model, when</h2>
       <div class="cols2">
         <ul class="points">
-          <li><strong>Fast model</strong> â quick edits, boilerplate, high-volume iteration</li>
-          <li><strong>Reasoning model</strong> â tricky logic, planning, gnarly bugs</li>
+          <li><strong>Fast model</strong> — quick edits, boilerplate, high-volume iteration</li>
+          <li><strong>Reasoning model</strong> — tricky logic, planning, gnarly bugs</li>
         </ul>
         <div class="demo-box">
-          Same task, two models â compare the result and the speed.
-          <br /><br />ð° We'll put a <strong>credit cost</strong> on each on Day 2.
+          Same task, two models — compare the result and the speed.
+          <br /><br />💰 We'll put a <strong>credit cost</strong> on each on Day 2.
         </div>
       </div>
     </section>
 
-    <!-- 8 Â· Best-in-class prompting -->
+    <!-- 8 · Best-in-class prompting -->
     <section class="slide">
       <span class="kicker">How the best builders prompt</span>
       <h2>Best-in-class prompting</h2>
       <ul class="points">
         <li><strong>Specify the outcome</strong>, not the steps</li>
-        <li><strong>Give constraints</strong> â stack, style, don't-touch</li>
+        <li><strong>Give constraints</strong> — stack, style, don't-touch</li>
         <li><strong>Iterate in small loops</strong>, not one mega-prompt</li>
         <li><strong>Ask it to plan first</strong>, then build</li>
       </ul>
       <div class="chip-row">
-        <span class="chip">ð Full cheat sheet â&nbsp;<a href="cheatsheet.html">cheatsheet.html</a></span>
+        <span class="chip">📝 Full cheat sheet →&nbsp;<a href="cheatsheet.html">cheatsheet.html</a></span>
       </div>
     </section>
 
-    <!-- 9 Â· Live build -->
+    <!-- 9 · Live build -->
     <section class="slide">
-      <span class="kicker">ð´ Live build</span>
-      <h2>Issue â PR â shipped. No editor required.</h2>
+      <span class="kicker">🔴 Live build</span>
+      <h2>Issue → PR → shipped. No editor required.</h2>
       <div class="flow-steps">
-        <div class="fstep"><span class="n">1</span><span>Write the <strong>issue</strong> â a real pain point, clearly described</span></div>
-        <div class="fstep"><span class="n">2</span><span>Assign it to <strong>Copilot</strong> on github.com â the agent gets to work</span></div>
+        <div class="fstep"><span class="n">1</span><span>Write the <strong>issue</strong> — a real pain point, clearly described</span></div>
+        <div class="fstep"><span class="n">2</span><span>Assign it to <strong>Copilot</strong> on github.com — the agent gets to work</span></div>
         <div class="fstep"><span class="n">3</span><span>Review the <strong>pull request</strong> it opens</span></div>
-        <div class="fstep"><span class="n">4</span><span><strong>Merge</strong> â auto-deploys â refresh the live app</span></div>
+        <div class="fstep"><span class="n">4</span><span><strong>Merge</strong> → auto-deploys → refresh the live app</span></div>
       </div>
       <div class="chip-row">
-        <span class="chip">ð Demo app â&nbsp;<a href="https://mdiiacovo.github.io/ai-native-intake-demo/" target="_blank" rel="noopener">intake front door</a></span>
+        <span class="chip">🚀 Demo app →&nbsp;<a href="https://mdiiacovo.github.io/ai-native-intake-demo/" target="_blank" rel="noopener">intake front door</a></span>
       </div>
     </section>
 
-    <!-- 10 Â· Close -->
+    <!-- 10 · Close -->
     <section class="slide">
       <span class="kicker">That's day one</span>
       <h1>Now go <span class="grad">start your project</span></h1>
-      <p class="lead">Context â prompt â build â delegate â PR. This is exactly how you begin at the hackathon.</p>
+      <p class="lead">Context → prompt → build → delegate → PR. This is exactly how you begin at the hackathon.</p>
       <div class="chip-row">
-        <span class="chip">â Checklist â&nbsp;<a href="checklist.html">before the hackathon</a></span>
-        <span class="chip">â¡ï¸ Next: Aug 19 â make it best-in-class</span>
+        <span class="chip">✅ Checklist →&nbsp;<a href="checklist.html">before the hackathon</a></span>
+        <span class="chip">➡️ Next: Aug 19 — make it best-in-class</span>
       </div>
     </section>
 
@@ -138,12 +138,12 @@
 
   <div class="hint">← → navigate · O show/hide slides · P download PDF · F fullscreen</div>
   <div class="deck-bar">
-    <a class="home" href="index.html">â All sessions</a>
-    <span class="title">Session 1 Â· Building with GitHub Copilot</span>
+    <a class="home" href="index.html">← All sessions</a>
+    <span class="title">Session 1 · Building with GitHub Copilot</span>
     <span class="spacer"></span>
-    <button id="prev">â¹ Prev</button>
+    <button id="prev">‹ Prev</button>
     <span class="counter">1 / 10</span>
-    <button id="next">Next âº</button>
+    <button id="next">Next ›</button>
   </div>
 
   <script src="deck.js"></script>
